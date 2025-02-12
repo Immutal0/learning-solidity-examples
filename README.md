@@ -1,106 +1,111 @@
-# learning solidity ~~2018~~ [We are updating this project in 2024 😎]
+# Ethereum Smart Contracts for Learning
 
+This repository contains a collection of smart contract challenges designed to help you learn the fundamentals of Ethereum smart contract development. Each challenge provides a problem statement and a specific functionality that the smart contract should implement.
 
-These examples are part of my guide [The best way to become Ethereum Developer in 2018](https://medium.com/@pbrudny/the-best-way-to-become-ethereum-solidity-developer-in-2018-5606e54646e6)
+Before reviewing the solutions in the repository, try to implement the contract yourself to enhance your learning experience!
 
-and `30/30 challenge` on [polish ethereum programming](https://www.facebook.com/groups/531936723867447/?ref=bookmarks) FB group (members write one contract a day to improve Solidity skills).
-
-In Ethereum world everything is changing dynamically.
-I decided to make a set of Smart Contracts for learning purposes.
-
-I know it's funny to name a repo this way but I am quite convinced that in 2019 these examples may not work with the latest Solidity.
-
-Try to write a contract yourself before checking the code in the repo!
+---
 
 ## Challenges
 
-### 01_say_hello.sol
-* set greeting on creation and allow to change it by the owner (creator of the contract)
-* return greeting to everyone who calls `sayHello` method
-* return `Hello Daddy` to the creator
+### 01 - `say_hello.sol`
+- Set a greeting on contract creation, allowing the owner (creator) to change it.
+- Implement a `sayHello` method to return the greeting to anyone who calls it.
+- Return "Hello Daddy" specifically to the contract's creator.
 
-### 02_balance_address_checker.sol
-* return address of the contract
-* return address of the contract's owner
-* return address of the sender
-* return balance of the contract
-* return balance of the contract's owner (ONLY if you are the owner)
-* return balance of the sender
+### 02 - `balance_address_checker.sol`
+- Return the contract's address.
+- Return the contract owner's address.
+- Return the sender's address.
+- Return the contract's balance.
+- If the caller is the owner, return the owner's balance.
+- Return the sender's balance.
 
-### 03_basic_random.sol
-* return random number 0-99
-* the "financial importance" of this calculation is less than miner would get for mining single block
-* https://ethereum.stackexchange.com/questions/419/when-can-blockhash-be-safely-used-for-a-random-number-when-would-it-be-unsafe?noredirect=1&lq=1
+### 03 - `basic_random.sol`
+- Generate a random number between 0 and 99.
+- Ensure the computational cost is lower than the reward a miner would receive for mining a block.
 
-### 04_lottery_10_users.sol
-* 10 users limit
-* user has to pay 0.1 ether to join the lottery
-* same user can join once
-* owner of the contract can join the lottery
-* when 10 users join then the winner is picked
-* winner receives all the money
-* new lottery starts when the winner is pickecd
+### 04 - `lottery_10_users.sol`
+- Limit the lottery to 10 users.
+- Each user must pay 0.1 ether to enter the lottery.
+- Each user can only enter once.
+- The contract owner is allowed to participate.
+- Once 10 users have entered, the winner is selected.
+- The winner receives the entire pot.
+- A new lottery starts after the winner is selected.
 
-### 05_lottery_no_limit.sol
-* user has to pay 0.1 ether to join the lottery
-* no limit for users number   
-* same user can join multiple times
-* owner of the contract can join too
-* owner decides when to pick the winner
-* winner receives all the money
-* new lottery starts when the winner is pickecd
+### 05 - `lottery_no_limit.sol`
+- No limit on the number of users.
+- Each user must pay 0.1 ether to enter.
+- Users can enter multiple times.
+- The contract owner can participate as well.
+- The owner decides when to select a winner.
+- The winner receives the entire prize pool.
+- A new lottery begins once a winner is selected.
 
-### 06_lottery_muliple_winners
-* no limit for users
-* user joins paying 0.1 eth and picking number 1-100
-* owner decides when to generate random number (1-100) 
-* users who picked generated numbers win
-* total prize is distributed to all winners
+### 06 - `lottery_multiple_winners.sol`
+- No limit on the number of users.
+- Users join by paying 0.1 ether and picking a number between 1 and 100.
+- The contract owner decides when to generate the random number.
+- Users who select the winning number(s) will receive a share of the prize pool.
+- The prize is distributed proportionally among all winners.
 
-### 07_fundraising
-* fundraising has the goal to reach (amount is set on creation)
-* fundraising has the time limit (time is set on creation)
-* anyone can add any amount until time is up or the goal is reached
-* when the time is up but the goal is not reached users can withdraw their funds
-* when the goal is reached owner can withdraw all the money
+### 07 - `fundraising.sol`
+- The fundraising contract has a target amount that must be reached.
+- A time limit is set upon contract creation.
+- Anyone can contribute any amount until the goal is reached or time expires.
+- After the time limit expires:
+  - If the goal was not met, contributors can withdraw their funds.
+  - If the goal is met, the contract owner can withdraw the full amount.
 
-### 08_basic_token
-* intial supply of tokens is set on creation
-* contract creator gets initial tokens
-* tokens can be transferred to any account
-* there is a protection from overflow
-* everyone can check balances
+### 08 - `basic_token.sol`
+- An initial token supply is set upon contract creation.
+- The contract creator receives the initial token supply.
+- Tokens can be transferred to any address.
+- Protection from overflow should be implemented.
+- Users can check balances.
 
-### 09_ERC_20_token
-* implement ERC20 token based on [the EIP specification]( https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)
+### 09 - `ERC20_token.sol`
+- Implement an ERC-20 token based on the [EIP-20 specification](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md).
 
-### 10_ERC20_usage
-* create your own ERC20 token using Open Zeppelin implementation
-* inherit from "StandardToken"
-* add custom name, symbol, decimals and initial supply
+### 10 - `ERC20_usage.sol`
+- Create your own ERC-20 token using the OpenZeppelin implementation.
+- Inherit from `StandardToken`.
+- Add custom functionality such as name, symbol, decimals, and initial supply.
 
-### 11_ERC_721_usage
-* create your own ERC721 token using Open Zeppelin implementation
-* inherit from "ERC721Token"
-* add custom name and symbol
+### 11 - `ERC721_usage.sol`
+- Create your own ERC-721 token using the OpenZeppelin implementation.
+- Inherit from `ERC721Token`.
+- Add custom name and symbol for your token.
 
-## Other challenges
-* [Truffle challenges: 12-29](https://github.com/pbrudny/truffle-challanges)
-* [Web3 deploy challenge: 30](https://github.com/pbrudny/web3-deploy-example)
+---
 
-## Contribution
-* feel to free to add new challenges in the README.
-* feel free to add your solution to any challenge (of course if it's different than the existing one)
+## Contribution Guidelines
 
-### Example: 
-If you want to add another Basic Token contract:
-1. Fork the repo
-2. Add `basic_token_b.sol` to the `07_basic_token` directory
-3. Make a PR
-4. Let me review it and merge it
-5. Enjoy having a nice contribution to the great project :)
+We encourage contributions to this repository! If you'd like to contribute, please follow these steps:
 
-## Like it?
-If you like it please share it with others :)
+1. Fork the repository.
+2. Add your solution or new challenge to the appropriate directory.
+   - For example, if you want to add another implementation for a basic token contract, add it to the `07_basic_token` directory.
+3. Submit a pull request (PR).
+4. I will review your submission and merge it.
+5. Enjoy contributing to the project!
 
+---
 
+## How to Add a New Challenge
+
+If you'd like to propose a new challenge, follow these steps:
+
+1. Fork the repository.
+2. Add a new challenge description in the `README.md`.
+3. Add your solution as a new contract file in the appropriate directory.
+4. Submit a pull request with your changes.
+
+---
+
+## Contact to me
+- **Telegram**: [@Immutal0](https://t.me/Immutal0)
+- **Twitter**: [@Immutal0](https://x.com/Immutal0)
+
+If you like my repos give me start
