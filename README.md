@@ -106,6 +106,6 @@ If you'd like to propose a new challenge, follow these steps:
 
 ## Contact to me
 - **Telegram**: [@Immutal0](https://t.me/Immutal0)
-- **Twitter**: [@Immutal0](https://x.com/Immutal0)
+- **Twitter**: [@Immutal0_](https://x.com/Immutal0_)
 
 If you like my repos give me start
